@@ -31,8 +31,19 @@
 			</nav>
         </header>
     </head>
+    <div id="map" style="margin-left:5px;width:1450px; height: 780px;"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=77e2236754a6b98a5099113d94fd3b50"></script>
+    <script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
     
-        <aside class="right_sub_menu" >
+   <aside class="right_sub_menu" >
             <section class="section1" >
 
                 <h3 style="margin:90px; font-size: 2rem;"> 근방 추천 관광지</h3>

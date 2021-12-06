@@ -10,5 +10,6 @@ urlpatterns = [
     path('', views.mainpage, name='mainpage'),
     path('new/', views.new),
     path('third/', views.third),
+    path('map_googlepoint/', views.map_googlepoint),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,17 @@
+
+        
+.right_sub_menu {
+    position: fixed;
+    top: 0px;
+    width: 450px;
+    z-index: 10;
+    right: 0px;
+    background: #b4c7e7;
+    border-right: 1px solid rgba(59, 49, 49, 0.07);
+    bottom: 50px;
+    height: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    color: black;
+}

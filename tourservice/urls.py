@@ -21,5 +21,5 @@ from mainpage.views import mainpage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainpage.urls')),
-   
+       
 ]

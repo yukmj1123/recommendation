@@ -2,7 +2,9 @@
     <meta charset="UTF-8">
     <title>사람 적은 관광지 찾기</title>
         <style>
-            
+          .main_area ul{
+              padding: 20px 10px 10px 10px;
+          }
             .title{
                 background-color:white;
                 width:500px;
@@ -22,14 +24,18 @@
                 margin-left:600px;
                 margin-top:50px;
                 border-radius:2em;
+                
             }
             .blank1{
+                padding-bottom: 40px;
                 width:700px;
                 height:50px;
+                text-align: center;
             }
             .blank2{
                 width:700px;
                 height:70px;
+                text-align: center;
             }
             .bottom_area{
                 background-color:white;
@@ -47,8 +53,6 @@
                 width:200px;
                 height:30px;
                 background-color:rgb(143,170,220);
-                float: right;
-                margin-right:50px;
                 border-color:rgb(143,170,220);
                 color:white;
                 font-size:20px;
@@ -82,18 +86,15 @@
         </div>
         <div class="main_area">
             <div class="blank1">
-          
-             <form>
-                &emsp;&emsp;&emsp;&emsp;목적지를 입력해주세요:
-                 <input class="input_area">
-            </form>
+                <ul>목적지를 입력해주세요</ul>
+                <input class="input_area"> </input>
+              
              </div>
-            <div class="blank2">
-      
-            <form>
-                &emsp;&emsp;&emsp;&emsp;연령을 입력해주세요:
-                <input class="input_area">
-             </form>
+            
+             <div class="blank2">
+                <ul>연령을 입력해주세요</ul>
+                <input class="input_area" style="margin-right: 0px;">  </input>
+             
             </div>
         
             <form>

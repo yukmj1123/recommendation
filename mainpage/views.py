@@ -9,4 +9,4 @@ def new(request):
     
 def third(request):
     return render(request, 'third.html')
-    
+

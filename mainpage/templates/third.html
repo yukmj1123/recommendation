@@ -1,5 +1,4 @@
-<html><head>
-    <meta charset="UTF-8">
+ <meta charset="UTF-8">
     <title>관광지 정보</title>
         <style>
             .main_area{
@@ -20,63 +19,130 @@
         .inform_area{
             width:250px;
             height:200px;
-            margin:100px;
+            margin:30px 100px 100px 100px;
             background-color:white;
             border:1px solid black;
         }
-            .pic_area{
-                width:80%;
-                height:100%;
-                background-color:blue;
-                float:left;
-            }
+            
             .title_area{
+                margin-top: 100px;
                 width:100%;
                 height:50px;
-                font-size:2em;
+                font-size:2.2em;
+                text-align: center;
             }
             .num_area{
                 width:100%;
                 height:50px;
                 font-size:1.2em;
+                text-align: center;
             }
             .section1 { margin-left: 20px;}
-        </style>
+     
+    </style> 
+    <head>
+        <header style="width:100%; height:15%; background-color:#fbfdea">
+            <nav>
+				<ul>
+                   <img style="width:250px; margin-left: -70px; margin-top: -10px;" src="/static/mainpage/image/logo_1.png">
+				</ul>
+			</nav>
+        </header>
     </head>
-    <body>
-    <div style="width:100%; height:15%; background-color:#fbfdea;position:absolute;">
-         
-        <img style="width:250px; margin-left: -5px; margin-top: -10px;" src="/static/mainpage/image/logo_1.png">
-    </div>
-        <div class="pic_area">
-        </div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            //위도 경도
+          center: {lat: 37.566554, lng: 126.978546},
+          zoom: 12
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsUQD08UHt-hzxZpHk7aOPO__U_4c5ZhU&callback=initMap"
+    async defer></script>
+
+    <script>
+        var map;
+        function initMap() {
+            var cityHall = {lat: 37.566554, lng: 126.978546};
+
+            var defaultOptions = {
+                zoom: 12,
+                center: cityHall,
+                disableDefaultUI:true,
+                zoomControl: true
+                };
+            map = new google.maps.Map(document.getElementById('map'), defaultOptions);
+
+            var marker = new google.maps.Marker({position: cityHall, map: map});
+        }
+    </script>
+    
+    <aside class="right_sub_menu" >
+      <section class="section1" >
+
         <div class="main_area">
             <br>
             
                 <div class="title_area">
-                 <center>홍릉 수목원</center>
-                </div>
+
+                 홍릉 수목원
+ </div>
              <br>
             <div class="num_area">
                 <center>0월 평균 관광인구 수 : 0000명</center>
             </div>
-            <div class="">
-            <center>홈페이지 바로가기:</center>
+
+            <div class="" style="text-align: center;">
+            홈페이지 바로가기:
                 <br>
-                <center>https://www.AzaAza.com</center>
+                https://www.AzaAza.com
+                
             </div>
-             <br>
-             <center>관광지 정보</center> 
+
+            <div style="text-align: center;">
+                <br>
+                관광지 정보
+            </div>
+
+           
             <div class="inform_area">
                 .......................................................................
                 .......................................................................
                 .......................................................................
                 .......................................................................</div>
-            <div style="margin-left: 2\px; margin-top: 0px; font-size: 0.8em;" class="copyright"> <center><p>Copyright 2019. AZAAZA . All rights reserved. Designed by AZAAZA.</p></center>
+
+            <div style="margin-left: 2px; margin-top: 0px; font-size: 0.8em; text-align: center;" class="copyright"> <p>Copyright 2019. AZAAZA . All rights reserved. Designed by AZAAZA.</p>
             </div>
             </div>
         
-    
-    
+      </section>
+    </aside>
 
-</body></html>
+  </body>
+</html>
+

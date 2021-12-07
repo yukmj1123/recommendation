@@ -10,5 +10,4 @@ def new(request):
 def third(request):
     return render(request, 'third.html')
 
-def map_googlepoint(request):
-    return render(request, 'map_googlepoint.html')
+

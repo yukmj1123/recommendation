@@ -1,6 +1,3 @@
-{% load static %}    
-
-
 <html>
 <body>
     <style>
@@ -26,51 +23,90 @@
         <header style="width:100%; height:15%; background-color:#fbfdea">
             <nav>
 				<ul>
-                    <img style="width:250px; margin-left: -70px; margin-top: -10px;" src="/static/mainpage/image/logo_1.png">
+                   <img style="width:250px; margin-left: -70px; margin-top: -10px;" src="/static/mainpage/image/logo_1.png">
 				</ul>
 			</nav>
         </header>
     </head>
-    <div id="map" style="margin-left:5px;width:1450px; height: 780px;"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=77e2236754a6b98a5099113d94fd3b50"></script>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
     <script>
-		var container = document.getElementById('map');
-		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
-			level: 3
-		};
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            //위도 경도
+          center: {lat: 37.566554, lng: 126.978546},
+          zoom: 12
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsUQD08UHt-hzxZpHk7aOPO__U_4c5ZhU&callback=initMap"
+    async defer></script>
 
-		var map = new kakao.maps.Map(container, options);
-	</script>
+    <script>
+        var map;
+        function initMap() {
+            var cityHall = {lat: 37.566554, lng: 126.978546};
+
+            var defaultOptions = {
+                zoom: 12,
+                center: cityHall,
+                disableDefaultUI:true,
+                zoomControl: true
+                };
+            map = new google.maps.Map(document.getElementById('map'), defaultOptions);
+
+            var marker = new google.maps.Marker({position: cityHall, map: map});
+        }
+    </script>
     
-   <aside class="right_sub_menu" >
-            <section class="section1" >
+    <aside class="right_sub_menu" >
+      <section class="section1" >
 
-                <h3 style="margin:90px; font-size: 2rem;"> 근방 추천 관광지</h3>
-                
-                 
-                <div class="blogger_img_wrap"> 
-                     <!--<img src="[##_image_##]" alt="블로거 대표 이미지" />-->
-                    <div>
-                         <span style="margin:50px 155px 30px; font-size: 1.5rem;">[##_1_##]</span>
-                         <div  class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px; background-color: #366ac4; border-radius: 20px;">
-                         </div>
-               
-                        <span style="margin:50px 155px 30px; font-size: 1.5rem;" class="blog_desc">[##_2_##]</span>
-                        <div class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px;  background-color: #366ac4;  border-radius: 20px;">
-                         </div>
-                        <p style="margin:30px 155px 30px; font-size: 1.5rem;" class="blog_desc">[##_3_##]</p>
-                        <div  class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px;  background-color: #366ac4;  border-radius: 20px;">
-                        </div>
-                        <div style="margin-left: 2\px; margin-top: 0px; font-size: 0.8em;" class="copyright"> <p>Copyright 2019. AZAAZA . All rights reserved. Designed by AZAAZA.</p>
-                            <a href='http://127.0.0.1:8000/new/'>Home</a> 
-                        </div> 
-                    </div> 
-                </div>      
-            </section> 
+        <h3 style="margin:90px; font-size: 2rem;"> 근방 추천 관광지</h3>
+        
+         
+        <div class="blogger_img_wrap"> 
+             <!--<img src="[##_image_##]" alt="블로거 대표 이미지" />-->
+            <div>
+                 <span style="margin:50px 155px 30px; font-size: 1.5rem;">[##_1_##]</span>
+                 <div  class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px; background-color: #366ac4; border-radius: 20px;">
+                 </div>
+       
+                <span style="margin:50px 155px 30px; font-size: 1.5rem;" class="blog_desc">[##_2_##]</span>
+                <div class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px;  background-color: #366ac4;  border-radius: 20px;">
+                 </div>
+                <p style="margin:30px 155px 30px; font-size: 1.5rem;" class="blog_desc">[##_3_##]</p>
+                <div  class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px;  background-color: #366ac4;  border-radius: 20px;">
+                </div>
+                <div style="margin-left: 2\px; margin-top: 0px; font-size: 0.8em;" class="copyright"> <p>Copyright 2019. AZAAZA . All rights reserved. Designed by AZAAZA.</p>
+                    <a href='http://127.0.0.1:8000/new/'>Home</a> 
+                </div> 
+            </div> 
+        </div>
+      </section>
     </aside>
 
-   
-
-</body>
-</html>  
+  </body>
+</html>

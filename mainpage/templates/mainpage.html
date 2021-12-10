@@ -1,3 +1,4 @@
+
 <html>
 <body>
     <style>
@@ -62,7 +63,9 @@
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsUQD08UHt-hzxZpHk7aOPO__U_4c5ZhU&callback=initMap"
-    async defer></script>
+    async defer>
+  
+  </script>
 
     <script>
         var map;
@@ -85,15 +88,22 @@
       <section class="section1" >
 
         <h3 style="margin:90px; font-size: 2rem;"> 근방 추천 관광지</h3>
-        
          
         <div class="blogger_img_wrap"> 
              <!--<img src="[##_image_##]" alt="블로거 대표 이미지" />-->
             <div>
-                 <span style="margin:50px 155px 30px; font-size: 1.5rem;">[##_1_##]</span>
+              
+                 <span style="margin:50px 155px 30px; font-size: 1.5rem;">[##_1_##]
+                  <ul>
+                  {% for s in bsdata %}
+                 <li> {{s.place|safe }}</li>
+                  {% endfor %}
+                  </ul>
+                </span>
+               
                  <div  class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px; background-color: #366ac4; border-radius: 20px;">
+
                  </div>
-       
                 <span style="margin:50px 155px 30px; font-size: 1.5rem;" class="blog_desc">[##_2_##]</span>
                 <div class="box" style=" margin:30px 110px 30px; width: 160px; height:70px; padding:20px;  background-color: #366ac4;  border-radius: 20px;">
                  </div>

@@ -1,30 +1,55 @@
 {% load static %}
 <!DOCTYPE html>
+<style>
+  .navbar-brand {
+color: black;
+padding:20px; margin-left: 700px; margin-top: 60px; marfin-bottom:20px; font-size:2rem;
+  }
+  .home_btn{
+    font-size: 2rem;
+  }
+  .home_btn:link {color:white;
+            text-decoration: none; }
+
+          .home_btn:visited { color: #366ac4; }
+          .home_btn:hover{color:white;
+            text-shadow:2px 2px 2px #366ac4;}
+  body{
+background-color:#e6f4fa;
+  }
+</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width", initial-scale=1.0>
-    <title>관광지 추천 서비스 후기</title>
     <link rel="stylesheet" href="{% static 'blog/base.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    
+          <header style="width:100%; height:15%; background-color:#fbfdea ">
+            <p class="copyright" style="float:right;">
+              Copyright 2019. AZAAZA . All rights reserved. Designed by AZAAZA
+          </p>
+            <img style="width:250px; margin-left: -5px; margin-top: -10px;" src="/static/mainpage/image/logo_1.png"/>
+            <a class="home_btn" href='http://127.0.0.1:8000/' ><strong>HOME </strong></a>
+            <a class="home_btn" href="{% url 'post_list' %}" ><strong>LIST</strong> </a>
+          
+            </header>
 </head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'post_list' %}">관광지 추천서비스 후기</a>
+<body style="background-color:#e6f4fa;">
+  <a class="navbar-brand" href="{% url 'post_list' %}" style=" margin-left: 700px; margin-top: 60px; marfin-bottom:20px; font-size:2rem;"><strong>관광지 추천서비스 후기</strong></a>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container-fluid">
+         
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item dropdown">
@@ -41,16 +66,12 @@
               <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
-            </ul> -->
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+            </ul>
+          </div> -->
         </div>
       </nav>
 
-    <div class='container'>
+    <div class='container' style="margin-left: 700px;">
         {% block content %}
         {% endblock content %}
     </div>

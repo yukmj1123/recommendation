@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<table class="table">
+<div >
+<table class="table" style="margin-left:-400px; margin-top: 80px; margin-bottom: 50px;">
         <thead>
                 <th>id</th>
                 <th>제목</th>
@@ -20,7 +20,7 @@
         </tbody>
 </table>
 
-<a href="{% url 'post_new' %}" class="btn btn-secondary">새글쓰기</a></button>
+<a href="{% url 'post_new' %}" class="btn btn-secondary" style="margin-left:-400px;">새글쓰기</a></button>
 {% endblock content %}
 
 {% for post in posts %}
@@ -32,3 +32,4 @@
         <span>{{ post.updated_at }}</span>
 
 {% endfor %}
+</div>

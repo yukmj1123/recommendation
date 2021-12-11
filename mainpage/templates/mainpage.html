@@ -103,9 +103,12 @@
           zoom: 7
         });
       }
-      function initMap1(x,y) {
+      function initMap1(x,y,at,tt) {
         var lat = x;
         var lng = y;
+        var costring= '<div>' + at+'</br>'+'<p>관광객 수 :</p>' +tt+'</div>';
+
+
         if(lat==0){
           alert('위도 정보가 없습니다');
         }
@@ -117,6 +120,9 @@
         });
 
         var marker = new google.maps.Marker({position:markLocation, map: map});
+        var infowindow = new google.maps.InfoWindow( { content: costring, maxWizzzdth:500} );
+
+        google.maps.event.addListener(marker, 'click', function() { infowindow.open(map, marker); });
       }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsUQD08UHt-hzxZpHk7aOPO__U_4c5ZhU&callback=initMap">
@@ -133,10 +139,9 @@
              <!--<img src="[##_image_##]" alt="블로거 대표 이미지" />-->
             <div>
              
-              
+          
                  <span style="margin:0px 160px 0px; font-size: 1.5rem;">[##_1_##]
                 </span>
-               
                  <div  class="box" onclick="location.href='/third';">
                  
                   <li>{{data.0.place}}</li>
@@ -145,15 +150,18 @@
                  </div>
                  <script> 
                   function doFunction(){
+                    var at="{{data.0.place}}";
+                    var tt="{{data.0.total}}";
                            var x ="{{data.0.lat}}";
                            var y= "{{data.0.lng}}";
-                           initMap1(x,y);
+                           initMap1(x,y,at,tt); 
                   }
-              
+                 
                    </script>
 
                  <input id="clickMe" type="button" value="map" onclick="doFunction();" />
-
+                
+                
                 <span style="margin:50px 160px 30px; font-size: 1.5rem;" class="blog_desc">[##_2_##]</span>
                 <div class="box" onclick="location.href='/third';" >
                   <li>{{data.1.place}}</li>
@@ -162,9 +170,12 @@
                  </div>
                  <script>
                  function doFunction1(){
-                  var x =parseFloat("{{data.1.lat}}" );
-                  var y =parseFloat("{{data.1.lng}}") ;
-                  initMap1(x,y);
+                  var at="{{data.1.place}}";
+                    var tt="{{data.1.total}}";
+                           var x ="{{data.1.lat}}";
+                           var y= "{{data.1.lng}}";
+                           initMap1(x,y,at,tt); 
+  
                        }
                   </script>
                  <input id="clickMe" type="button" value="map" onclick="doFunction1();" />
@@ -178,9 +189,12 @@
                 </div>
                 <script> 
                   function doFunction2(){
-                           var x ="{{data.0.lat}}";
-                           var y= "{{data.0.lng}}";
-                           initMap1(x,y);
+                    var at="{{data.2.place}}";
+                    var tt="{{data.2.total}}";
+                           var x ="{{data.2.lat}}";
+                           var y= "{{data.2.lng}}";
+                           initMap1(x,y,at,tt); 
+                          
                   }
               
                    </script>

@@ -9,7 +9,7 @@ urlpatterns = [
     #*path('', views.index, name='index'),
     #path('mainpage/', views.mainpage),
     path('', views.new),
-    path('third/', views.third),
+    path('third/', views.index),
     path('mainpage/',views.SearchFuncOk)
 
 ]

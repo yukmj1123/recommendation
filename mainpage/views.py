@@ -84,8 +84,8 @@ def SearchFuncOk(request):
         return render(request,'mainpage.html',{'data': data}) 
     
 
-
-
+def index(request):
+	return render(request, 'third.html')
 
 
 

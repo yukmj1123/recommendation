@@ -1,4 +1,4 @@
-from django.db.models import query
+
 
 from django.shortcuts import render
 from .models import Jeju, Busan, Seoul,Ulsan ,Gangwon, Gyeongbuk,  Gyeonggi,Gyeongnam ,Gwangju,Incheon,Chungbuk,Chungnam,Jeonbuk,Jeonnam,Daegu,Daejeon,Sejong
@@ -84,11 +84,7 @@ def SearchFuncOk(request):
         data=Jeonnam.objects.all().order_by('total')[:3]
         return render(request,'mainpage.html',{'data': data}) 
     
-
-
-
-
-
-
+def review(request):
+    return render(request, 'review.html')
 
 

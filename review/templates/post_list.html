@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table">
+        <thead>
+                <th>id</th>
+                <th>제목</th>
+                <th>별점</th>
+
+        </thead>
+        <tbody>
+                {% for post in posts %}
+                <tr>
+                        <td>{{ post.id }}</td>
+                        <td><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></td>
+                        <td>{{ post.rating }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+</table>
+
+<a href="{% url 'post_new' %}" class="btn btn-secondary">새글쓰기</a></button>
+{% endblock content %}
+
+{% for post in posts %}
+        <h1>
+                <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+                <br>별점:{{ post.rating }}<br>
+        </h1>
+
+        <span>{{ post.updated_at }}</span>
+
+{% endfor %}

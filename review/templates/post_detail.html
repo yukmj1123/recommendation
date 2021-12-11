@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ post.title }}
+
+<p>
+    {% if post.image %}
+    <img src="{{ post.image.url }}">
+    {% endif %}
+</p>
+<hr>
+{{ post.content }}<br><br>
+<br>별점: {{ post.rating }}<br>
+
+<a href="{% url 'post_list' %}">목록으로</a>
+{% endblock content %}

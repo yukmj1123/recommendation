@@ -11,5 +11,6 @@ urlpatterns = [
     path('', views.new),
     path('third/', views.third),
     path('mainpage/',views.SearchFuncOk)
+
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

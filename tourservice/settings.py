@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainpage'
+    'mainpage',
+    'review',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,8 @@ STATIC_URL = '/static/'                                    # 이미 settings.py 
 STATIC_ROOT = '/static/'           #나중에 static 폴더를 모을 때 이곳에 모이게 됩니다.
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'),
 ]                         
+
+# os.path.join(BASE_DIR, 'static'),
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

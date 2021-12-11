@@ -1,12 +1,29 @@
 <html><head>
     <meta charset="UTF-8">
     <title>사람 적은 관광지 찾기</title>
+        
         <style>
+            body,header{
+               margin: 0;
+                padding: 0;
+            }
+            .bgimg {
+            border: 0;
+            padding: 0; 
+            background-image: url(/static/mainpage/image/main.png);
+            min-height: 100%;
+             background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+}
           .main_area ul{
-              padding: 20px 10px 10px 10px;
+              padding: 40px 10px 10px 80px;
+              font-size: 1.65em;
+              font-weight: 600;
+              color: rgb(58, 77, 109);
           }
             .title{
-                background-color:white;
+                
                 width:500px;
                 height:100px;
                 margin-left:730px;
@@ -19,11 +36,12 @@
         }
             .main_area{
                 background-color:rgb(180,199,231);
-                width:700px;
-                height:250px;
-                margin-left:600px;
+                width:800px;
+                height:285px;
+                margin-left:550px;
                 margin-top:50px;
                 border-radius:2em;
+              
                 
             }
             .blank1{
@@ -50,21 +68,32 @@
                 height:30px;
              }
             .input_area{
-                width:200px;
-                height:30px;
+                width:300px;
+                height:45px;
                 background-color:rgb(143,170,220);
                 border-color:rgb(143,170,220);
                 color:white;
                 font-size:20px;
                 display:inline-block;
+                margin-left: 80px;
+              
             }
             .submit_button{
                 width:100px;
-                height:30px;
-                background-color:blue;
-                color:white;
-                margin-right:50px;
+                height:45px;
+                background-color:white;
+                color:rgb(58, 77, 109);
+                margin-right:70px;
+                margin-top: 22px;
                 float:right;
+                border:solid 3px rgb(58, 77, 109);
+                border-radius: 10px;
+                font-size:1.2rem;
+            }
+            .submit_button:hover{
+                background-color:rgb(58, 77, 109);
+                color: white;
+                
             }
             .copyright{
                 font-size: 0.8em;
@@ -73,6 +102,26 @@
         </style>
     </head>
     <body>
+        <script>
+
+            function check() {
+            
+              if(frm.query.value == "") {
+            
+                alert("값을 입력해 주세요.");
+            
+                frm.query.focus();
+            
+                return false;
+            
+              }
+            
+              else return true;
+            
+            }
+            
+            </script>
+
         <header style="width:100%; height:15%; background-color:#fbfdea">
         <p class="copyright" style="float:right;">
             Copyright 2019. AZAAZA . All rights reserved. Designed by AZAAZA
@@ -85,24 +134,17 @@
             </div>
         </div>
         <div class="main_area">
+            <form name="frm" action="/mainpage" method="GET" onsubmit="return check()"  >{% csrf_token%}
             <div class="blank1">
+                
                 <ul>목적지를 입력해주세요</ul>
-                <input class="input_area"> </input>
+                <input class="input_area" type="search" name="query">
               
              </div>
-            
-             <div class="blank2">
-                <ul>연령을 입력해주세요</ul>
-                <input class="input_area" style="margin-right: 0px;">  </input>
-             
-            </div>
-        
-            <form>
-                <a href="http://127.0.0.1:8000/">
-                 <input class="submit_button" type="button" value="검색">
-              </a>
+                 <input class="submit_button" type="submit" value="검색" >
              </form>
-        
+             <p style="font-size:0.8rem;padding-top:100px;text-align: center;">(입력형식 :  서울특별시 , 부산광역시, 대구광역시, 인천광역시, 광주광역시, 대전광역시, 울산광역시, 세종특별자치시</br>
+                경기도,강원도,충청북도, 충청남도, 전라북도,전라남도, 경상북도, 경상남도, 제주도) </p>
         </div>
         <div class="bottom_area">
          사용 후기를 알려주세요

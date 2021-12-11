@@ -7,9 +7,9 @@ from django.conf import settings
 
 urlpatterns = [
     #*path('', views.index, name='index'),
-    path('', views.mainpage, name='mainpage'),
-    path('new/', views.new),
+    #path('mainpage/', views.mainpage),
+    path('', views.new),
     path('third/', views.third),
-    path('list',views.listFunc)
+    path('mainpage/',views.SearchFuncOk)
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import dj_database_url
 
 from pathlib import Path
 import os
@@ -21,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-zp%pq*_gsc09k!^ct2*!(m*y_wc_e3e%j94xms&49*25l9(@ou'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-zp%pq*_gsc09k!^ct2*!(m*y_wc_e3e%j94xms&49*25l9(@ou')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,6 +88,9 @@ DATABASES = {
 
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 
 # Password validation
@@ -127,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'                                    # 이미 settings.py 입력이 되어있을 것입니다.
 STATIC_ROOT = '/static/'           #나중에 static 폴더를 모을 때 이곳에 모이게 됩니다.
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'),
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'staticfiles'),
 ]                         
 
 # os.path.join(BASE_DIR, 'static'),

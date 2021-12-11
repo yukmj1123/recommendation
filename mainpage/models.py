@@ -3,16 +3,14 @@ from django.db import models
 
 # Create your models here.
 class Busan(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    place = models.CharField(max_length=30)
-    lat = models.FloatField()
-    lng = models.FloatField()
-    subject = models.CharField(max_length=30)
-    total = models.IntegerField()
-    y2018 = models.IntegerField()
-    y2019 = models.IntegerField()
-    y2020 = models.IntegerField()
-    y2021 = models.IntegerField()
+    place = models.CharField(primary_key=True, max_length=45)
+    lat = models.FloatField(blank=True, null=True)
+    lng = models.FloatField(blank=True, null=True)
+    total = models.IntegerField(blank=True, null=True)
+    y2018 = models.IntegerField(blank=True, null=True)
+    y2019 = models.IntegerField(blank=True, null=True)
+    y2020 = models.IntegerField(blank=True, null=True)
+    y2021 = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -77,7 +75,6 @@ class Daejeon(models.Model):
     class Meta:
         managed = False
         db_table = 'daejeon'
-
 
 
 class Gangwon(models.Model):

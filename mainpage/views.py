@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import *
+from .models import *
 from django.template import loader, Context
 
 from tourservice.settings import TEMPLATES
@@ -17,11 +19,9 @@ def new(request):
 def third(request):
     return render(request, 'third.html')
 
+def review(request):
+    return render(request, 'review.html')
 def listFunc(request):
     bsdata=Busan.objects.all()
     return render(request,'mainpage.html',{"bsdata":bsdata})
-
-
-
-
 

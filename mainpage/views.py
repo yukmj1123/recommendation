@@ -84,7 +84,16 @@ def SearchFuncOk(request):
         data=Jeonnam.objects.all().order_by('total')[:3]
         return render(request,'mainpage.html',{'data': data}) 
     
+
+
+def index(request):
+	return render(request, 'third.html')
+
+
+
+
 def review(request):
     return render(request, 'review.html')
+
 
 

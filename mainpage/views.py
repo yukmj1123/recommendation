@@ -1,4 +1,5 @@
 
+
 from django.shortcuts import render
 from .models import Jeju, Busan, Seoul,Ulsan ,Gangwon, Gyeongbuk,  Gyeonggi,Gyeongnam ,Gwangju,Incheon,Chungbuk,Chungnam,Jeonbuk,Jeonnam,Daegu,Daejeon,Sejong
 
@@ -84,10 +85,15 @@ def SearchFuncOk(request):
         return render(request,'mainpage.html',{'data': data}) 
     
 
+
 def index(request):
 	return render(request, 'third.html')
 
 
+
+
+def review(request):
+    return render(request, 'review.html')
 
 
 

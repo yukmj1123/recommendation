@@ -19,7 +19,12 @@ from django.urls import path,include
 from mainpage.views import mainpage
 
 urlpatterns = [
+    path('review/', include('review.urls')),
     path('admin/', admin.site.urls),
     path('', include('mainpage.urls')),
-   
+       
 ]
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
